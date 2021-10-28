@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+struct node
+{
+    int item;
+    struct node *link;
+};
+
+
+typedef struct node *NODE;
+
+NODE getnode()
+{
+    NODE x;
+    x = (NODE)malloc(sizeof(struct node));
+    if(x==NULL)
+    {
+        pritnf("NO Memory available\n");
+        exit(0);
+    }
+    return x;
+}
+
+int main()
+{
+    int num1,num2,item;
+    NODE head1=NULL,head2=NULL;
+
+    printf("Enter the number of nodes in l");
+    scanf("%d",&num1);
+    for(int i=0;i<num1;i++)
+    {
+        printf("Enter the item %d",(i+1));
+        scanf("%d",&num1);
+        head1 = insert(head1,item);
+    }
+    
+    printf("Enter the number of nodes in 2");
+    scanf("%d",&num2);
+    for(int i=0;i<num2;i++)
+    {
+        printf("Enter the item %d",i);
+        scanf("%d",&item);
+        head2 =insert(head2,item);
+    }
+
+    
+}
